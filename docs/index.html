@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171923">
+  <title>J GACHA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-mark">JG</div>
+    <div>
+      <p class="eyebrow">YOUR PERSONAL CARD ARCHIVE</p>
+      <h1>J GACHA</h1>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero panel">
+      <p class="eyebrow">FIVE CARD DRAW</p>
+      <h2>次は、どんなカードに出会う？</h2>
+      <p class="muted">ボタンを押して、ランダムなカードを5枚引こう。</p>
+      <button id="draw-button" class="primary-button">5枚引く <span aria-hidden="true">✦</span></button>
+      <p id="draw-status" class="status" aria-live="polite">いつでもガチャを引けます。</p>
+      <details class="odds-panel">
+        <summary>レアリティ別の排出確率</summary>
+        <div id="rarity-odds" class="odds-list"></div>
+        <p class="muted small">登録されているレアリティに応じて確率は自動調整されます。</p>
+      </details>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">RESULT</p>
+          <h2>今回の結果</h2>
+        </div>
+        <span id="result-count" class="counter">0 / 5</span>
+      </div>
+      <div id="results" class="card-grid result-grid">
+        <div class="empty-state">ここに引いたカードが表示されます。</div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COLLECTION</p>
+          <h2>カード図鑑</h2>
+        </div>
+        <span id="collection-count" class="counter">0種類</span>
+      </div>
+      <p class="muted small">このブラウザで引いたカードが記録されます。重複したカードは所持枚数に加算されます。</p>
+      <div class="rarity-filters" id="rarity-filters" aria-label="レアリティで絞り込み"></div>
+      <div id="collection" class="card-grid">
+        <div class="empty-state">まだカードを引いていません。</div>
+      </div>
+      <div class="collection-actions">
+        <button id="clear-button" class="quiet-button">このブラウザの記録をリセット</button>
+      </div>
+    </section>
+    <footer>カード画像・説明文は cards.js で編集できます。</footer>
+  </main>
+
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
